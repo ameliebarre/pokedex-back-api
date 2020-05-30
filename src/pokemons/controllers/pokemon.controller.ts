@@ -3,7 +3,7 @@ import { CreatePokemonDTO } from '../dto/create-pokemon.dto';
 import { UpdatePokemonDTO } from '../dto/update-pokemon.dto';
 
 @Controller('pokemons')
-export class PokemonsController {
+export class PokemonController {
   @Get()
   async findAll(): Promise<any[]> {
     return [];
