@@ -8,12 +8,14 @@ export class PokemonService {
   /**
    * Find all Pokemons
    */
-  findAll() {}
+  findAll(): Pokemon[] {
+    return this.pokemons;
+  }
 
   /**
    * Get a Pokemon by its slug
    */
-  findOne(slug: string) {}
+  findOne(slug: string): void {}
 
   /**
    * Create a new Pokemon
