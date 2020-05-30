@@ -1,3 +1,7 @@
+import { Game } from "src/games/interfaces/game.interface";
+import { Attack } from "src/attacks/interfaces/attack.interface";
+import { Type } from "src/types/interfaces/type.interface";
+
 export interface Pokemon {
   _id: string;
   names: {
@@ -16,7 +20,7 @@ export interface Pokemon {
       number: string;
       versions: [
         {
-          games: [];
+          games: Game[];
           key: string;
         }
       ]
@@ -24,7 +28,7 @@ export interface Pokemon {
   ];
   attacks: [
     {
-      attack: Object;
+      attack: Attack;
       level: string;
     }
   ];
@@ -53,7 +57,7 @@ export interface Pokemon {
   ];
   places: [
     {
-      game: Object;
+      game: Game;
       place: string;
     }
   ];
@@ -86,6 +90,6 @@ export interface Pokemon {
   color: string;
   size: string;
   catch_rate: number;
-  types: [];
-  weaknesses: [];
+  types: Type[];
+  weaknesses: Type[];
 }
