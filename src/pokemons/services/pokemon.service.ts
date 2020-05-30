@@ -12,14 +12,18 @@ export class PokemonService {
    * Find all Pokemons
    * @returns {Pokemon[]}
    */
-  findAll(): void {}
+  async findAll(): Promise<Pokemon[]> {
+    return await this.pokemonModel.find().exec();
+  }
 
   /**
    * Get a Pokemon by its slug
    * @param {string} slug
    * @returns {Pokemon}
    */
-  findOne(slug: string): void {}
+  async findOne(slug: string): Promise<Pokemon> {
+    return this.pokemonModel.findOne({ slug }).exec();
+  }
 
   /**
    * Create a new Pokemon
