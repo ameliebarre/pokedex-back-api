@@ -7,6 +7,7 @@ export class PokemonService {
 
   /**
    * Find all Pokemons
+   * @returns {Pokemon[]}
    */
   findAll(): Pokemon[] {
     return this.pokemons;
@@ -14,12 +15,14 @@ export class PokemonService {
 
   /**
    * Get a Pokemon by its slug
+   * @param {string} slug
+   * @returns {Pokemon}
    */
   findOne(slug: string): void {}
 
   /**
    * Create a new Pokemon
-   * @param pokemon 
+   * @param {Pokemon} pokemon
    */
   create(pokemon: Pokemon) {}
 
@@ -31,7 +34,7 @@ export class PokemonService {
 
   /**
    * Delete a Pokemon
-   * @param slug 
+   * @param {string} slug 
    */
   delete(slug: string) {}
 }
