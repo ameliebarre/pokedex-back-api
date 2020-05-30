@@ -25,9 +25,9 @@ export class PokemonService {
 
   /**
    * Update a Pokemon
-   * @param pokemon
+   * @param {string} slug
    */
-  update(pokemon: Pokemon) {}
+  update(slug: string) {}
 
   /**
    * Delete a Pokemon
