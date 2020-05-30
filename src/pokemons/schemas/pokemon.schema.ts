@@ -1,7 +1,4 @@
 import * as mongoose from 'mongoose';
-import { Game } from "src/games/interfaces/game.interface";
-import { Attack } from "src/attacks/interfaces/attack.interface";
-import { Type } from "src/types/interfaces/type.interface";
 
 export const PokemonSchema = new mongoose.Schema({
   _id: String,
