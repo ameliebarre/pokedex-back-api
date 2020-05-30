@@ -9,9 +9,7 @@ export class AttackController {
   constructor(private attackService: AttackService) {}
 
   @Post()
-  async create(@Body() createAttackDTO: CreateAttackDTO) {
-    this.attackService.create(createAttackDTO);
-  }
+  async create(@Body() createAttackDTO: CreateAttackDTO) {}
 
   @Put(':slug')
   async update(@Param('slug') slug: string, @Body() updateAttackDTO: UpdateAttackDTO) {}

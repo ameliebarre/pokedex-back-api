@@ -10,9 +10,7 @@ export class PokemonController {
   constructor(private pokemonService: PokemonService) {}
 
   @Get()
-  async findAll(): Promise<Pokemon[]> {
-    return this.pokemonService.findAll();
-  }
+  async findAll(): Promise<void> {}
 
   @Get(':slug')
   async findOne(@Param('slug') slug: string): Promise<any> {}

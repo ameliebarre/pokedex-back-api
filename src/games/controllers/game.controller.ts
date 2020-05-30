@@ -9,17 +9,13 @@ export class GameController {
   constructor(private gameService: GameService) {}
 
   @Get()
-  async findAll(): Promise<Game[]> {
-    return this.gameService.findAll();
-  }
+  async findAll(): Promise<void> {}
 
   @Get(':slug')
   async findOne(@Param('slug') slug: string): Promise<any> {}
 
   @Post()
-  async create(@Body() createGameDTO: CreateGameDTO) {
-    this.gameService.create(createGameDTO);
-  }
+  async create(@Body() createGameDTO: CreateGameDTO) {}
 
   @Put(':slug')
   async update(@Param('slug') slug: string, @Body() updateGameDTO: UpdateGameDTO) {}
