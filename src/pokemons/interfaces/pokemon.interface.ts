@@ -35,7 +35,7 @@ export interface Pokemon {
   evolutions: [
     {
       stade: string;
-      pokemon: Object;
+      pokemon: Pokemon;
       description: string;
     }
   ];
@@ -64,27 +64,27 @@ export interface Pokemon {
   statistics: {
     hp: {
       name: string;
-      value: Number;
+      value: number;
     };
     attack: {
       name: string;
-      value: Number;
+      value: number;
     };
     defense: {
       name: string;
-      value: Number;
+      value: number;
     };
     sp_attack: {
       name: string;
-      value: Number;
+      value: number;
     };
     sp_defense: {
       name: string;
-      value: Number;
+      value: number;
     };
     speed: {
       name: string;
-      value: Number;
+      value: number;
     };
   };
   color: string;
