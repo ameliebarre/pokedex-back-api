@@ -1,6 +1,7 @@
+import { Document } from 'mongoose';
 import { Game } from "src/games/interfaces/game.interface";
 
-export interface Attack {
+export interface Attack extends Document {
   _id: string;
   games: [
     {

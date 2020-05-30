@@ -8,9 +8,7 @@ export class TypeController {
   constructor(private typeService: TypeService) {}
 
   @Post()
-  async create(@Body() createTypeDTO: CreateTypeDTO) {
-    this.typeService.create(createTypeDTO);
-  }
+  async create(@Body() createTypeDTO: CreateTypeDTO) {}
 
   @Put(':slug')
   async update(@Param('slug') slug: string, @Body() updateTypeDTO: UpdateTypeDTO) {}

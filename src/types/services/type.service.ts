@@ -1,8 +1,13 @@
-import { Injectable } from "@nestjs/common";
+import { Model } from 'mongoose';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { Type } from "../interfaces/type.interface";
 
 @Injectable()
 export class TypeService {
+
+  constructor(@InjectModel('Type') private typeModel: Model<Type>) {}
+
   /**
    * Create a new type
    * @param {Type} type 
@@ -16,7 +21,7 @@ export class TypeService {
   update(slug: string) {}
 
   /**
-   * Delete a Pokemon
+   * Delete a type
    * @param {string} slug 
    */
   delete(slug: string) {}

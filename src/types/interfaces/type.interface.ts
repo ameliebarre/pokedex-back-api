@@ -1,6 +1,8 @@
-export interface Type {
+import { Document } from 'mongoose';
+
+export interface Type extends Document {
   _id: string;
   name: string;
-  color: string;
   slug: string;
+  color: string;
 }

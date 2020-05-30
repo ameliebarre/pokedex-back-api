@@ -1,17 +1,18 @@
-import { Injectable } from "@nestjs/common";
+import { Model } from 'mongoose';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { Game } from "../interfaces/game.interface";
 
 @Injectable()
 export class GameService {
-  private readonly games: Game[] = [];
+  
+  constructor(@InjectModel('Game') private pokemonModel: Model<Game>) {}
 
   /**
    * Find all Pokemon video games
    * @returns {Game[]}
    */
-  findAll(): Game[] {
-    return this.games;
-  }
+  findAll(): void {}
 
   /**
    * Get a Pokemon video game by its slug

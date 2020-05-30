@@ -1,8 +1,9 @@
+import { Document } from 'mongoose';
 import { Game } from "src/games/interfaces/game.interface";
 import { Attack } from "src/attacks/interfaces/attack.interface";
 import { Type } from "src/types/interfaces/type.interface";
 
-export interface Pokemon {
+export interface Pokemon extends Document {
   _id: string;
   names: {
     french: string;
@@ -35,7 +36,7 @@ export interface Pokemon {
   evolutions: [
     {
       stade: string;
-      pokemon: Object;
+      pokemon: Pokemon;
       description: string;
     }
   ];
@@ -64,27 +65,27 @@ export interface Pokemon {
   statistics: {
     hp: {
       name: string;
-      value: Number;
+      value: number;
     };
     attack: {
       name: string;
-      value: Number;
+      value: number;
     };
     defense: {
       name: string;
-      value: Number;
+      value: number;
     };
     sp_attack: {
       name: string;
-      value: Number;
+      value: number;
     };
     sp_defense: {
       name: string;
-      value: Number;
+      value: number;
     };
     speed: {
       name: string;
-      value: Number;
+      value: number;
     };
   };
   color: string;
