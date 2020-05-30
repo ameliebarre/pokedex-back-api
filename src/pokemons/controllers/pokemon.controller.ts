@@ -18,9 +18,7 @@ export class PokemonController {
   async findOne(@Param('slug') slug: string): Promise<any> {}
 
   @Post()
-  async create(@Body() createPokemonDTO: CreatePokemonDTO) {
-    this.pokemonService.create(createPokemonDTO);
-  }
+  async create(@Body() createPokemonDTO: CreatePokemonDTO) {}
 
   @Put(':slug')
   async update(@Param('slug') slug: string, @Body() updatePokemonDTO: UpdatePokemonDTO) {}
