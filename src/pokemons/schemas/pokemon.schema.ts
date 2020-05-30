@@ -1,7 +1,6 @@
 import * as mongoose from 'mongoose';
-import { Pokemon } from '../interfaces/pokemon.interface';
 
-const PokemonSchema = new mongoose.Schema({
+export const PokemonSchema = new mongoose.Schema({
   _id: String,
   names: {
     french: String,
@@ -91,6 +90,4 @@ const PokemonSchema = new mongoose.Schema({
   catch_rate: Number,
   types: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Type' }],
   weaknesses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Type' }],
-});
-
-export default mongoose.model<Pokemon>('Pokemon', PokemonSchema);
+})
