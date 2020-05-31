@@ -37,7 +37,7 @@ describe('Pokemon controller', () => {
           family: "Graine",
           description: "Lorem ipsum",
           pokedex: [],
-          egg_group: "Monstrueux",
+          egg_group: ["Monstrueux"],
           generation: 1,
           talents: [
             {
@@ -90,7 +90,7 @@ describe('Pokemon controller', () => {
       ];
       jest.spyOn(pokemonService, "findAll").mockResolvedValue(expectedResult);
       expect(await pokemonController.findAll()).toBe(expectedResult);
-      expect(await (await pokemonController.findAll()).length).toEqual(1);
+      expect(await pokemonController.findAll()).toHaveLength(1);
     });
   });
 });

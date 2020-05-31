@@ -1,7 +1,7 @@
-import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
+import { TypeSchema } from 'src/types/schemas/type.schema';
 
-export const PokemonSchema = new mongoose.Schema({
-  _id: String,
+export const PokemonSchema = new Schema({
   names: {
     french: String,
     english: String,
@@ -18,7 +18,7 @@ export const PokemonSchema = new mongoose.Schema({
       number: String,
       versions: [
         {
-          games: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Game' }],
+          games: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
           key: String,
         }
       ]
@@ -26,14 +26,14 @@ export const PokemonSchema = new mongoose.Schema({
   ],
   attacks: [
     {
-      attack: { type: mongoose.Schema.Types.ObjectId, ref: 'Attack' },
+      attack: { type: Schema.Types.ObjectId, ref: 'Attack' },
       level: String,
     }
   ],
   evolutions: [
     {
       stade: String,
-      pokemon: { type: mongoose.Schema.Types.ObjectId, ref: 'Pokemon' },
+      pokemon: { type: Schema.Types.ObjectId, ref: 'Pokemon' },
       description: String,
     }
   ],
@@ -55,7 +55,7 @@ export const PokemonSchema = new mongoose.Schema({
   ],
   places: [
     {
-      game: { type: mongoose.Schema.Types.ObjectId, ref: 'Game' },
+      game: { type: Schema.Types.ObjectId, ref: 'Game' },
       place: String,
     }
   ],
@@ -88,6 +88,6 @@ export const PokemonSchema = new mongoose.Schema({
   color: String,
   size: String,
   catch_rate: Number,
-  types: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Type' }],
-  weaknesses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Type' }],
+  types: [{ type: Schema.Types.ObjectId, ref: TypeSchema }],
+  weaknesses: [{ type: Schema.Types.ObjectId, ref: TypeSchema }],
 })

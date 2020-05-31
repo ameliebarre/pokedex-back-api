@@ -17,7 +17,7 @@ export interface Pokemon extends Document {
   pokedex: Array<Pokedex>;
   attacks: Array<Attacks>;
   evolutions: Array<Evolution>;
-  egg_group: string;
+  egg_group: Array<string>;
   height: number;
   weight: number;
   talents: Array<Talent>;
@@ -52,8 +52,8 @@ export interface Pokemon extends Document {
   color: string;
   size: string;
   catch_rate: number;
-  types: Type[];
-  weaknesses: Type[];
+  types: Array<Type>;
+  weaknesses: Array<Type>;
 }
 
 interface Pokedex {
