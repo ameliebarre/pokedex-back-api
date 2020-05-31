@@ -14,54 +14,15 @@ export interface Pokemon extends Document {
   family: string;
   description: string;
   generation: number;
-  pokedex: [
-    {
-      name: string;
-      key: string;
-      number: string;
-      versions: [
-        {
-          games: Game[];
-          key: string;
-        }
-      ]
-    }
-  ];
-  attacks: [
-    {
-      attack: Attack;
-      level: string;
-    }
-  ];
-  evolutions: [
-    {
-      stade: string;
-      pokemon: Pokemon;
-      description: string;
-    }
-  ];
-  egg_group: string;
+  pokedex: Array<Pokedex>;
+  attacks: Array<Attacks>;
+  evolutions: Array<Evolution>;
+  egg_group: Array<string>;
   height: number;
   weight: number;
-  talents: [
-    {
-      name: string;
-      description: string;
-    }
-  ];
-  sex: [
-    {
-      label: string;
-      key: string;
-      percentage: number;
-    }
-  ];
-  places: [
-    {
-      game: Game;
-      place: string;
-    }
-  ];
+  talents: Array<Talent>;
+  sex: Array<Sex>;
+  places: Array<Place>;
   statistics: {
     hp: {
       name: string;
@@ -91,6 +52,45 @@ export interface Pokemon extends Document {
   color: string;
   size: string;
   catch_rate: number;
-  types: Type[];
-  weaknesses: Type[];
+  types: Array<Type>;
+  weaknesses: Array<Type>;
+}
+
+interface Pokedex {
+  name: string;
+  key: string;
+  number: string;
+  versions: [
+    {
+      games: Game[];
+      key: string;
+    }
+  ]
+}
+
+interface Attacks {
+  attack: Attack;
+  level: string;
+}
+
+interface Evolution {
+  stade: string;
+  pokemon: Pokemon;
+  description: string;
+}
+
+interface Talent {
+    name: string;
+    description: string;
+}
+
+interface Place {
+  game: Game;
+  place: string;
+}
+
+interface Sex {
+  label: string;
+  key: string;
+  percentage: number;
 }
